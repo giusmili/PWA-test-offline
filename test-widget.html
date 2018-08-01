@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#ffffff"/>
+	<title>meteo</title>
+	<link rel="manifest" href="manifest.json">
+	<style>
+	body{
+		font: 16px sans-serif;
+	}
+
+		main div .widget-left{
+			margin:0 auto;
+			transform: translateY(50%);
+	
+
+		}
+		main div .widget-left-menu--brown{
+			background-image: linear-gradient(to top left,#205afe,#efe9db);
+			color: #fafafa;
+			border:0;
+		}
+		main div .widget-left-menu__header{
+			color: #fafafa;
+		}
+		
+
+	h1{
+		font-weight: 100;
+		text-align: center;
+
+	}
+	.widget-left-menu__layout {
+   	 	border-bottom: 2px solid transparent!important;
+   	}
+
+   	/*responsive*/
+   	@media screen and (max-width: 1024px) {
+   		main {
+   			margin:0 1%;
+
+   		}
+   		main div .widget-left,main div .widget-left-menu--brown{
+   			width: auto;
+   			margin:0;
+
+
+   		
+   		}
+   		main div .widget-left{
+   			transform: translateY(0);
+   			margin-top:5px;
+   			min-height: 100vh;
+   		}
+   		main .widget-left-menu__header, div .widget-left-menu__layout{
+   			width: auto;
+   		}
+	   	h1,main div h2{
+	   		font-size: 1rem!important;
+	   	}
+	   	main div .widget-left-menu{
+			display: block;
+			width: auto;
+			padding:1%;
+			line-height: 35px;
+	   	}
+
+	  
+   	}
+
+	</style>
+</head>
+<body>
+<h1>Widgets constructor by Openweathermap-widget</h1>
+	<main id="openweathermap-widget-11"></main>
+	<script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+	<script>
+    window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 11,cityid: '2988507',appid: 'd2ac3faa06e597adb2f961fc3bcda333',units: 'metric',containerid: 'openweathermap-widget-11',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();
+    
+
+    /*service worker*/
+ if (navigator.serviceWorker.controller) {
+  console.log('[PWA Builder] active service worker found, no need to register')
+} else {
+  //Register the ServiceWorker
+  navigator.serviceWorker.register('pwabuilder-sw.js', {
+    scope: './'
+  }).then(function(reg) {
+    console.log('Service worker has been registered for scope:'+ reg.scope);
+  });
+}
+//service
+
+</script>
+<script src="pwabuilder-sw.js"></script>
+<script src="polyfill.js"></script>
+
+</body>
+</html>
